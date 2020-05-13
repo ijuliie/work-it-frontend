@@ -16,7 +16,7 @@ function App() {
     workoutCategory: '',
     workoutRoutine: '' 
   })
-  console.log("IM A USER BITCH!!!",user)
+
 
   return (
     <div className="App">
