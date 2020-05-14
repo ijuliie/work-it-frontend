@@ -5,13 +5,12 @@ import { Form } from 'react-bootstrap'
 
 export default function Login(){
     const workoutContext = useContext(WorkoutContext)
-    const [login, setLogin] = useState(
-        {
+    const [login, setLogin] = useState({
             username: '',
             password: ''
-        }
-    )
-    console.log(login)
+        })
+
+        console.log("login:", login)
 
     const handleSubmit = async (e) => {
         e.preventDefault()
@@ -21,7 +20,8 @@ export default function Login(){
                 console.log("resposne:", response.token)
                 workoutContext.setUser(response.token)
                 console.log('sucess')
-			}
+                workoutContext.setLoggedIn(true)
+            }
         })
     }
 
