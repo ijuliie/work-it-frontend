@@ -22,18 +22,9 @@ export default function Register() {
         e.preventDefault()
         await registerNewUser(newUser)
         .then(response => {
-            console.log("WHAT AM I???????:",response)
-            if(response.token){
-                console.log("reponse:", response.status)
-                console.log("success")
-                workoutContext.setUser(response)
-                localStorage.setItem('user', JSON.stringify((response))) //i dont work
-            }  else {
-                console.log('failed')
-            }
+            workoutContext.setUser(response)
         })
     }
-    console.log("USER FROM LOCAL STORAGE",localStorage.getItem("user").username)
 
     const handleChange = (e) => {
         const value = e.target.value
