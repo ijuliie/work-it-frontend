@@ -1,6 +1,5 @@
 import React, { useState, useEffect, createContext } from 'react'
 import { Route, Switch } from 'react-router-dom'
-import { userLogin } from "../src/services/api-helper"
 import Home from './components/home/home'
 import Profile from './components/profile/profile'
 import CreateWorkout from './components/createworkout/createworkout'
@@ -11,7 +10,7 @@ import './App.css'
 
 function App() {
   const [user, setUser] = useState([])
-  const [workouts, setWorkouts] = ([])
+  const [workout, setWorkout] = useState([])
   const [loggedIn, setLoggedIn] = useState(false);
   console.log("APP:", user)
 
@@ -22,8 +21,8 @@ function App() {
         <WorkoutContext.Provider value={{
           user,
           setUser,
-          workouts,
-          setWorkouts,
+          workout,
+          setWorkout,
           loggedIn,
           setLoggedIn
         }}>
