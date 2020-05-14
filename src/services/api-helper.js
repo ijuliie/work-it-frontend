@@ -19,11 +19,33 @@ export const userLogin = async (user) => {
     return res.data
 }
 
+export const getWorkouts = async (token) => {
+    const res = await api.get('/workouts/', {
+        headers: {
+            authorization: `JWT ${token}`
+        }
+    })
+    
+    return res
+}
+
 export const createWorkout = async (workout, token) => {
     const res = await api.post('/workouts/', workout, {
         headers: {
             authorization: `JWT ${token}`
         }
     })
+    
+    return res
+}
+
+// i don't work correctly
+export const deleteWorkout = async (pk, token) => {
+    const res = await api.delete(`/workouts/${pk}`, {
+        headers: {
+            authorization: `JWT ${token}`
+        }
+    })
+    
     return res
 }
