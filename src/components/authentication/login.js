@@ -10,18 +10,18 @@ export default function Login(){
             password: ''
         })
 
-        console.log("login:", login)
-
     const handleSubmit = async (e) => {
         e.preventDefault()
-        console.log("LOGIN FROM SUBMIT", login)
         await userLogin(login).then(response => {
             if(response.token){
-                console.log("resposne:", response.token)
                 workoutContext.setUser(response.token)
-                console.log('sucess')
+
                 workoutContext.setLoggedIn(true)
             }
+        })
+        setLogin({
+            username: '',
+            password: ''
         })
     }
 
@@ -33,9 +33,19 @@ export default function Login(){
     return(
         <Form onSubmit={ handleSubmit }>
 
-        <input name="username" value={login.username} onChange={ handleChange } placeholder="Username" />
+        <input 
+            name="username"
+            value={ login.username } 
+            onChange={ handleChange } 
+            placeholder="Username" 
+         />
 
-        <input name="password" value={login.password} onChange={ handleChange } placeholder="Password" />
+        <input 
+            name="password" 
+            alue={ login.password } 
+            onChange={ handleChange } 
+            placeholder="Password" 
+        />
 
         <input type="Submit" value="Submit" />
     </Form>
