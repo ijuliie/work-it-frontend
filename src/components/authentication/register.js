@@ -15,14 +15,12 @@ export default function Register() {
             password: ''
         }
     )
-
-    console.log('newuser:', newUser)
-    
+  
     const handleSubmit = async (e) => {
         e.preventDefault()
         await registerNewUser(newUser)
         .then(response => {
-            workoutContext.setUser(response)
+            workoutContext.setUser(response.token)
         })
     }
 
