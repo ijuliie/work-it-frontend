@@ -17,22 +17,18 @@ export default function Login(){
         e.preventDefault()
         console.log("LOGIN FROM SUBMIT", login)
         await userLogin(login).then(response => {
-            console.log("resposne:", response)
-            if(response.status === 200){
-                workoutContext.setUser(response.data)
-                localStorage.setItem('user')
-                console.log(response.data)
+            if(response.token){
+                console.log("resposne:", response.token)
+                workoutContext.setUser(response.token)
                 console.log('sucess')
-			} else {
-				console.log('error')
 			}
         })
     }
 
     const handleChange = (e) => {
         const value = e.target.value
-        setLogin({...login, [e.target.name]: value});
-     };
+        setLogin({...login, [e.target.name]: value})
+     }
 
     return(
         <Form onSubmit={ handleSubmit }>
