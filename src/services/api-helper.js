@@ -22,7 +22,7 @@ export const userLogin = async (user) => {
 export const createWorkout = async (workout, token) => {
     const res = await api.post('/workouts/', workout, {
         headers: {
-            authorizations: `JWT ${token}`
+            authorization: `JWT ${token}`
         }
     })
     return res
