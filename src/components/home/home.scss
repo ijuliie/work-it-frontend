@@ -1,0 +1,20 @@
+$myColor: #FF6978;
+@mixin flexCenter {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    margin-top: 15%;
+
+}
+
+.container {
+    @include flexCenter();
+
+    .card {
+        display: block;
+        background-color: $myColor;
+        border-radius: 20px;
+        margin-top: 10%;
+    }
+}
