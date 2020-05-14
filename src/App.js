@@ -1,22 +1,19 @@
-import React, { useState, createContext } from 'react'
+import React, { useState, useEffect, createContext } from 'react'
 import { Route, Switch } from 'react-router-dom'
+import { userLogin } from "../src/services/api-helper"
 import Home from './components/home/home'
 import Profile from './components/profile/profile'
-import Exercise from './components/exercise/exercise'
+import CreateWorkout from './components/createworkout/createworkout'
 import Register from './components/authentication/register'
 import Login from './components/authentication/login'
 import Nav from './components/nav/nav'
 import './App.css'
 
 function App() {
-
-  const [user, setUser] = useState(localStorage.getItem('user'))
-  const [newWorkout, setNewWorkout] = useState({
-    day: '',
-    workoutCategory: '',
-    workoutRoutine: '' 
-  })
-
+  const [user, setUser] = useState([])
+  const [workouts, setWorkouts] = ([])
+  const [loggedIn, setLoggedIn] = useState(false);
+  console.log("APP:", user)
 
   return (
     <div className="App">
@@ -25,13 +22,15 @@ function App() {
         <WorkoutContext.Provider value={{
           user,
           setUser,
-          newWorkout,
-          setNewWorkout,
+          workouts,
+          setWorkouts,
+          loggedIn,
+          setLoggedIn
         }}>
         <Switch>
             <Route exact path='/' component={ Home } />
             <Route path='/profile' component={ Profile } />
-            <Route path='/exercise' component={ Exercise } />
+            <Route path='/createworkout' component={ CreateWorkout } />
             <Route path='/register' component={ Register } />
             <Route path='/login' component={ Login }/>
         </Switch>
