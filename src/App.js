@@ -12,7 +12,6 @@ function App() {
   const [user, setUser] = useState([])
   const [workout, setWorkout] = useState([])
   const [loggedIn, setLoggedIn] = useState(false);
-  console.log("APP:", user)
 
   return (
     <div className="App">
