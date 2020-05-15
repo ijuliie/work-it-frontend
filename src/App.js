@@ -5,7 +5,7 @@ import Profile from './components/profile/profile'
 import CreateWorkout from './components/createworkout/createworkout'
 import Register from './components/authentication/register'
 import Login from './components/authentication/login'
-import Nav from './components/nav/nav'
+import Header from './components/header/header'
 import NoAccess from './components/authentication/noaccess'
 import './App.css'
 
@@ -17,7 +17,7 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-      <Nav />
+      <Header />
         <WorkoutContext.Provider value={{
           user,
           setUser,

@@ -2,8 +2,8 @@ import React from 'react'
 
 export default function NoAccess(){
     return (
-        <>
-            You must be logged in to create a website.
-        </>
+        <h2 style={{textAlign: 'center', margin: '50% auto'}}>
+            You must have an account to create a workout.
+        </h2>
     )
 }

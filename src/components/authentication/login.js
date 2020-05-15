@@ -4,7 +4,7 @@ import { WorkoutContext } from '../../App'
 import { Form } from 'react-bootstrap'
 import './login.scss'
 
-export default function Login(){
+export default function Login(props){
     const workoutContext = useContext(WorkoutContext)
     const [login, setLogin] = useState({
             username: '',
@@ -18,6 +18,7 @@ export default function Login(){
                 workoutContext.setUser(response.token)
 
                 workoutContext.setLoggedIn(true)
+                props.history.push('/')
             }
         })
         setLogin({
@@ -47,8 +48,9 @@ export default function Login(){
             <label>Password:</label>
         </div>
         <Form.Control  
+            type='password'
             name="password" 
-            alue={ login.password } 
+            value={ login.password } 
             onChange={ handleChange } 
         />
 

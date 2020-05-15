@@ -1,0 +1,15 @@
+$mycolor: #ff6978;
+$coffee: #352d39;
+
+h3 {
+    color: #ffffff;
+    font-family: 'Luckiest Guy', cursive;
+    margin: auto;
+    padding: 5px;
+    letter-spacing: 2.5px;
+}
+
+.navbar {
+    background-color: $coffee;
+    // background-color: opacity($color: mycolor);
+}

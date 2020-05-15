@@ -99,16 +99,16 @@ export default function CreateWorkout(props){
 
             
 
-            <div>
+            <div style={{marginTop: '2%'}}>
                 {
                 workoutContext.workout ? 
                     workoutContext.workout.map((workout, i) => { 
                     return ( 
                         <div key={i}>
-                            <h3>{workout.day}</h3>
+                            <h3 style={{textAlign: 'center'}}>{workout.day}</h3>
                             <p>{workout.workout}</p>
                             <p>{workout.workout_routine}</p>
-                            <button onClick={handleDelete}>delete</button>
+                            {/* <button onClick={handleDelete}>delete</button> */}
                         </div>
                         )
                     }) : ''

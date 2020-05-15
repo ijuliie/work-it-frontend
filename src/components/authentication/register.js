@@ -2,6 +2,7 @@ import React, { useState, useContext } from 'react'
 import { registerNewUser } from '../../services/api-helper'
 import { WorkoutContext } from '../../App'
 import { Form } from 'react-bootstrap'
+import { Link } from 'react-router-dom'
 import './../../styles.scss'
 import './register.scss'
 
@@ -78,6 +79,7 @@ export default function Register(props) {
             </div>
             <Form.Control 
                 name='password' 
+                type='password'
                 value={newUser.password} 
                 onChange={ handleChange } 
             />
@@ -85,6 +87,11 @@ export default function Register(props) {
             <Form.Control className='register-submit' type="Submit" value="Submit" />
 
         </Form>
+
+        <div style={{textAlign: 'center'}}>
+            <h4 style={{marginTop: '3%'}}>already have an account?</h4>
+            <Link style={{color: '#352d39', fontWeight: '700'}} to='login'>Login</Link>
+        </div>
 
         </>
     )

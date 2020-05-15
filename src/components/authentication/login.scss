@@ -1,24 +1,24 @@
-// $mycolor: #ff6978;
-// $coffee: #352d39;
-// @mixin marginAuto {
-//     margin: 0 auto;
-// }
+$mycolor: #ff6978;
+$coffee: #352d39;
+@mixin marginAuto {
+    margin: 0 auto;
+}
 
-// .label {
-//     @include marginAuto();
-//     text-align: center;
-//     display: block;
-//     font-weight: 700;
-// }
+.label {
+    @include marginAuto();
+    text-align: center;
+    display: block;
+    font-weight: 700;
+}
 
-// input.login-submit {
-//     @include marginAuto();
-//     margin-top: 4%;
-//     display: block;
-//     text-align: center;
-//     color: white;
-//     background-color: rgba($color: $mycolor, $alpha: 0.5);
-//     border: none;
-//     padding: 10px 20px;
-//     border-radius: 0.50em;
-// }
+input.login-submit {
+    @include marginAuto();
+    margin-top: 4%;
+    display: block;
+    text-align: center;
+    color: white;
+    background-color: rgba($color: $mycolor, $alpha: 0.5);
+    border: none;
+    padding: 10px 20px;
+    border-radius: 0.50em;
+}
