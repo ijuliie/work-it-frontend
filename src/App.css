@@ -1,0 +1,9 @@
+body {
+    background-image: url('../src/assets/Group (2).png');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    background-color: #ECE8E4;
+    font-family: 'Raleway', sans-serif;
+    color: #352D39;
+}

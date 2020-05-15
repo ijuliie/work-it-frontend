@@ -1,23 +1,18 @@
-.container {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  -webkit-box-pack: space-evenly;
-      -ms-flex-pack: space-evenly;
-          justify-content: space-evenly;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
-  margin-top: 15%;
+.container a {
+  font-size: 25px;
+  color: #352d39;
 }
 
 .container .card {
+  text-align: center;
   display: block;
-  background-color: #FF6978;
-  border-radius: 20px;
-  margin-top: 10%;
+  margin: 9% auto;
+  background-color: rgba(255, 105, 120, 0.6);
+  background-color: alpha(mycolor);
+}
+
+.container i {
+  margin: 5%;
+  font-size: 2em;
 }
 /*# sourceMappingURL=home.css.map */

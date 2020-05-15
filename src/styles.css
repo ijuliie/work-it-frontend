@@ -1,0 +1,11 @@
+input.form-control {
+  display: block;
+  margin: 0 auto;
+  width: 300px;
+  border: none;
+}
+
+input.register-submit {
+  width: 85px;
+}
+/*# sourceMappingURL=styles.css.map */

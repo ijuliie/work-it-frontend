@@ -5,6 +5,8 @@ import { Link } from 'react-router-dom'
 export default function Nav() {
     return (
         <>
+        <Nav>
+            {/* WORK IT */}
             <Navbar>
                 <Container>
                     <Link to='login'>Login</Link>
@@ -13,6 +15,7 @@ export default function Nav() {
                     <Link to='register'>Register</Link>
                 </Container>
             </Navbar>
+        </Nav>
         </>
     )
 }

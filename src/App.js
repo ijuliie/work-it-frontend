@@ -6,6 +6,7 @@ import CreateWorkout from './components/createworkout/createworkout'
 import Register from './components/authentication/register'
 import Login from './components/authentication/login'
 import Nav from './components/nav/nav'
+import NoAccess from './components/authentication/noaccess'
 import './App.css'
 
 function App() {
@@ -28,7 +29,7 @@ function App() {
         <Switch>
             <Route exact path='/' component={ Home } />
             <Route path='/profile' component={ Profile } />
-            <Route path='/createworkout' component={ CreateWorkout } />
+            <Route path='/createworkout' component={ loggedIn ? CreateWorkout : NoAccess } />
             <Route path='/register' component={ Register } />
             <Route path='/login' component={ Login }/>
         </Switch>

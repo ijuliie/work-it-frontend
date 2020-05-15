@@ -1,14 +1,17 @@
 import React, { useState, useEffect, useContext } from 'react'
 import { WorkoutContext } from '../../App'
 import { createWorkout, deleteWorkout, getWorkouts } from '../../services/api-helper'
+import './createworkout.scss'
 
-export default function CreateWorkout(){
+export default function CreateWorkout(props){
     const workoutContext = useContext(WorkoutContext)
     const [newWorkout, setNewWorkout] = useState({
         day: '',
         workout: '',
         workout_routine: '' 
       })
+
+      console.log(newWorkout)
 
       useEffect(() => {
         const callAPI = async () => {
@@ -24,7 +27,9 @@ export default function CreateWorkout(){
         .then(response => {
             if(response.token === 201){
                 workoutContext.workout.push(res)
-                workoutContext.setWorkout(res) // works but needs to render on page after submit
+                workoutContext.setWorkout(res)
+                props.history.push('/createworkout')
+                 // works but needs to render on page after submit
             }
         })
     }
@@ -45,12 +50,15 @@ export default function CreateWorkout(){
 
     return (
         <>
-            <form onSubmit={ handleSubmit }>
+            <form className='create-workout' onSubmit={ handleSubmit }>
+                <div className='label'>
+                    <label>Select Day:</label>
+                </div>
                 <select
-                    name="day" 
+                    name='day'
                     value={newWorkout.day} 
                     onChange={ handleChange } 
-                    placeholder="day" >
+                >
                     <option>Sunday</option>
                     <option>Monday</option>
                     <option>Tuesday</option>
@@ -60,11 +68,14 @@ export default function CreateWorkout(){
                     <option>Saturday</option>
                 </select>
 
+                <div className='label'>
+                    <label>Select Workout:</label>
+                </div>
                 <select
-                    name="workout" 
+                    name='workout' 
                     value={newWorkout.workout} 
                     onChange={ handleChange } 
-                    placeholder="day" >
+                >
                     <option>shoulders</option>
                     <option>arms</option>
                     <option>back</option>
@@ -73,16 +84,20 @@ export default function CreateWorkout(){
                     <option>legs</option>
                 </select>
 
+                <div className='label'>
+                    <label>Workout Routine:</label>
+                </div>
                 <textarea 
-                    name="workout_routine" 
+                    name='workout_routine' 
                     value={newWorkout.workout_routine} 
                     onChange={ handleChange } 
-                    placeholder='Workout Routine'
                 >
                 </textarea>
 
-                <input type="Submit" value="Submit" />
+                <input className='submit' name='submit' value='submit' type='submit' />
             </form>
+
+            
 
             <div>
                 {

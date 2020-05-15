@@ -1,0 +1,42 @@
+$mycolor: #ff6978;
+$coffee: #352d39;
+
+.create-workout {
+    select {
+        display: block;
+        margin: 1% auto;
+        width: 300px;
+        height: 40px;
+        border: none;
+    }
+
+    .label {
+        text-align: center;
+        font-weight: 700;
+    }
+
+    textarea {
+        display: block;
+        margin: 5% auto;
+        border: none;
+        width: 300px;
+        height: 200px;
+        background-color: rgba($color: $coffee, $alpha: 0.6);
+        border-radius: 1em;
+    }
+    .container {
+        display: block;
+        text-align: center;
+    }
+    
+    .submit {
+        display: block;
+        margin: 0 auto;
+        text-align: center;
+        color: white;
+        background-color: rgba($color: $mycolor, $alpha: 0.5);
+        border: none;
+        border-radius: 0.50em;
+        padding: 10px 20px;
+    }
+}

@@ -1,20 +1,22 @@
-$myColor: #FF6978;
-@mixin flexCenter {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-evenly;
-    flex-wrap: wrap;
-    margin-top: 15%;
-
-}
+$mycolor: #ff6978;
+$coffee: #352d39;
 
 .container {
-    @include flexCenter();
+    a {
+        font-size: 25px;
+        color: $coffee;
+    }
 
     .card {
+        text-align: center;
         display: block;
-        background-color: $myColor;
-        border-radius: 20px;
-        margin-top: 10%;
+        margin: 9% auto;
+        background-color: rgba($color: $mycolor, $alpha: 0.6);
+        background-color: opacity($color: mycolor);
+    }
+
+    i {
+        margin: 5%;
+        font-size: 2em;
     }
 }
