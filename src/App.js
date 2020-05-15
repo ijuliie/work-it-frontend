@@ -1,4 +1,4 @@
-import React, { useState, useEffect, createContext } from 'react'
+import React, { useState, createContext } from 'react'
 import { Route, Switch } from 'react-router-dom'
 import Home from './components/home/home'
 import Profile from './components/profile/profile'

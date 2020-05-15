@@ -138,3 +138,4 @@ const isLocalhost = Boolean(
           console.error(error.message);
         });
     }
+  }

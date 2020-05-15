@@ -6,7 +6,6 @@ export default function Nav() {
     return (
         <>
         <Nav>
-            {/* WORK IT */}
             <Navbar>
                 <Container>
                     <Link to='login'>Login</Link>
